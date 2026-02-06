@@ -32,7 +32,7 @@ export component Tabbar inherits SCard {
     in-out property <[MenuData]> tabs;
     in property <float> icon-scale: 1.66;
     in property <length> tab-size: root.card-height / root.icon-scale;
-    in-out property <int> active: 0;
+    in-out property <string> active: 0;
     in property <bool> show-text: true;
     callback change(MenuData);
     callback clicked(MenuData);
@@ -51,14 +51,14 @@ export component Tabbar inherits SCard {
                     clip: true;
                     SIcon {
                         theme: root.theme;
-                        colorize: root.active == item.id.to-float() ? ROOT_STYLES.radio-active : self.get-colorize();
+                        colorize: root.active == item.id ? ROOT_STYLES.radio-active : self.get-colorize();
                         height:root.tab-size;
                         width: root.tab-size;
                         source: item.icon;
                         clicked => {
                             root.clicked(item);
-                            if root.active != item.id.to-float() {
-                                root.active = item.id.to-float();
+                            if root.active != item.id {
+                                root.active = item.id;
                                 root.change(item);
                             }
                         }
