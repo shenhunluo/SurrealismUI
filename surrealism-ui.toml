@@ -11,4 +11,4 @@ keywords = ["slint-ui", "slint", "ui-components", "gui", "widgets"]
 
 
 [dependencies]
-slint = "1.9.1"
+slint = "1.15"

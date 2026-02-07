@@ -28,7 +28,6 @@ import { DefaultSDrawerProps } from "../../themes/index.slint";
 
 export component Drawer inherits SPopup { 
   theme: DefaultSDrawerProps.theme;
-  is-show: DefaultSDrawerProps.is-show;
   mask-opacity: DefaultSDrawerProps.mask-opacity;
   in property <Themes> drawer-theme : DefaultSDrawerProps.drawer-theme;
   in property <brush> drawer-background-color <=> drawer.background;
